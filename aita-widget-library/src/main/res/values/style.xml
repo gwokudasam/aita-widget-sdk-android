@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="widget_title">
+        <item name="android:textSize">@dimen/widget_title_text_size</item>
+        <item name="android:textColor">@color/widget_text_color</item>
+    </style>
+
+    <style name="widget_subtitle">
+        <item name="android:textSize">@dimen/widget_subtitle_text_size</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>
