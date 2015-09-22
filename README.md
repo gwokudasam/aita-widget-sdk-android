@@ -2,10 +2,105 @@
 Android library for working with App in the Air widget API.
 
 ## Usage
+1) Clone this repository
+    ```bash
+    git clone https://github.com/appintheair/aita-android-widget-sdk.git
+    ```
 
+2) Open project from the template folder
+    <p align="center">
+        <img src="https://habrastorage.org/files/b65/380/1ee/b653801eeb39447084cf21a6ec3e11e0.png"/>
+    </p>
+    
+    <p align="center">
+        <img src="https://habrastorage.org/files/032/d1e/e97/032d1ee975514cf096d235bb76d4df46.png"/>
+    </p>
+
+3) Add new library module - it will contain your widget.
+    <p align="center">
+        <img src="https://habrastorage.org/files/788/d2f/99e/788d2f99edff4698b7065acd9bb81965.png"/>
+    </p>
+    
+4) Add gradle dependency to your library module
+    ```groovy
+    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.0'
+    ```
+    and add your library module as a dependency for the template project app module.
+    
+5) Extend `WidgetView` class and implement all necessary methods
+    ```java
+    public class MyAwesomeWidget extends WidgetView {
+          @Override
+          protected void setUpWidget() {
+              // set up
+          }
+
+          @Override
+          public void update() {
+              // update
+          }
+
+          @NonNull
+          @Override
+          protected String getWidgetTitleText() {
+              return "Widget title";
+          }
+
+          @NonNull
+          @Override
+          protected String getWidgetSubtitleText() {
+              return "Widget subtitile";
+          }
+
+          @Override
+          protected int getWidgetIconId() {
+              return R.drawable.widget_icon;
+          }
+
+          @Override
+          protected int getWidgetViewId() {
+              return R.layout.view_widget;
+          }
+    }
+    ```
+    
+6) Fake flight, airport and airline data for your needs
+    ```java
+    final WidgetFlight flight = new WidgetFlight(
+                3973.3806f, // distance
+                "Scheduled", // status
+                "31B", //seat
+                "Economy", //seat zone
+                "MKF6HE", // booking reference
+                "737", // equipment
+                "1", // flight number
+                "AA", // airline IATA code
+                22200L, // duration in seconds
+                1442912400L, // checkin time
+                1442916200L, // boarding time
+                1442920000L, // take off time
+                1442923800L, // landing time
+                arrivalAirport, // arrival airport
+                departureAirport, // departure airport
+                airline // airline
+    );
+    ```
+    See full version [here](https://github.com/appintheair/aita-android-widget-sdk/sample/app/src/main/java/com/aita/aitawidgetsample/MainActivity.java)
+
+7) Create your awesome widget and test it with the template project. 
+
+## See also
+[Sample app](https://github.com/appintheair/aita-android-widget-sdk/sample/) with weather widget.
+<p align="center">
+        <img src="https://habrastorage.org/files/879/4d3/2ee/8794d32ee4154b6c8e34788f6d4d2a36.png"/>
+    </p>
 
 ## Distribution
+1) Find `.aar` file in `<your-library-module-name>/build/outputs/aar/<your-library-module-name>-release.aar` folder.
 
+2) Write us on [opensource@appintheair.mobi](mailto:opensource@appintheair.mobi). Attach full description of your widget, screenshots and `.aar` file.
+
+3) Feel free to contact us and ask any questions.
 
 ## License
     The MIT License (MIT)
@@ -29,4 +124,3 @@ Android library for working with App in the Air widget API.
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
-
