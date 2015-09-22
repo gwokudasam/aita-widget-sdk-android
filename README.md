@@ -1,5 +1,7 @@
-# App in the Air Android widget SDK
-Android library for working with App in the Air widget API.
+# App in the Air Android SDK
+AitA Android SDK designed to simplify the iteraction with App in the Air internal widget API. It will allow you to design a widget that is appear on our feed screen (there would be a screenshot with example here). Basically you are now allowed to design your own widgets that could be integrated with our application easily.
+
+Learn more about  [distribution](#distribution).
 
 ## Usage
 1) Clone this repository
@@ -13,17 +15,17 @@ git clone https://github.com/appintheair/aita-android-widget-sdk.git
 ![Screenshot 1](https://habrastorage.org/files/b65/380/1ee/b653801eeb39447084cf21a6ec3e11e0.png)
 ![Screenshot 2](https://habrastorage.org/files/032/d1e/e97/032d1ee975514cf096d235bb76d4df46.png)
 
-3) Add new library module - it will contain your widget.
+3) Your widget should be created as a library module.
 
 ![Screenshot 3](https://habrastorage.org/files/788/d2f/99e/788d2f99edff4698b7065acd9bb81965.png)
     
-4) Add gradle dependency to your library module
+4) To include our SDK in your projects add gradle dependency to your library module
 
 ```gradle
 compile 'com.github.appintheair:aita-android-widget-sdk:0.9.0'
 ```
 
-and add your library module as a dependency for the template project app module.
+Don't forget to add your module as a dependency for the template project of the app module.
 
 5) Extend `WidgetView` class and implement all necessary methods
 
@@ -63,7 +65,7 @@ public class MyAwesomeWidget extends WidgetView {
 }
 ```
     
-6) Fake flight, airport and airline data for your needs
+6) Flight example object. Feel free to edit any of those values.
 
 ```java
 final WidgetFlight flight = new WidgetFlight(
@@ -86,7 +88,7 @@ final WidgetFlight flight = new WidgetFlight(
 );
 ```
 
-See full version [here](https://github.com/appintheair/aita-android-widget-sdk/blob/master/sample/app/src/main/java/com/aita/aitawidgetsample/MainActivity.java)
+See full version with airport and airline objects [here](https://github.com/appintheair/aita-android-widget-sdk/blob/master/sample/app/src/main/java/com/aita/aitawidgetsample/MainActivity.java)
 
 7) Create your awesome widget and test it with the template project. 
 
