@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 22
@@ -22,15 +21,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.android.support:cardview-v7:22.0.0'
-    compile 'de.hdodenhof:circleimageview:1.3.0'
-}
-
-publish {
-    groupId = 'com.github.appintheair'
-    artifactId = 'aita-android-widget-sdk'
-    publishVersion = '0.9.0'
-    desc = 'Android library for working with App in the Air widget API.'
-    licences = ['MIT']
-    website = 'https://github.com/appintheair/aita-android-widget-sdk'
+    compile 'com.android.support:support-v4:22.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.0'
 }

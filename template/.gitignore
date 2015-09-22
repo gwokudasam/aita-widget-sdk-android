@@ -1,9 +1,7 @@
 .gradle
 /local.properties
 /.idea/
-AITAWidgetLibrary.iml
-aita-android-widget-sdk.iml
 .DS_Store
 /build
 /captures
-
+template.iml
