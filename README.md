@@ -3,32 +3,25 @@ Android library for working with App in the Air widget API.
 
 ## Usage
 1) Clone this repository
-    ```bash
-    git clone https://github.com/appintheair/aita-android-widget-sdk.git
-    ```
+	
+    `git clone https://github.com/appintheair/aita-android-widget-sdk.git`
 
 2) Open project from the template folder
-    <p align="center">
-        <img src="https://habrastorage.org/files/b65/380/1ee/b653801eeb39447084cf21a6ec3e11e0.png"/>
-    </p>
-    
-    <p align="center">
-        <img src="https://habrastorage.org/files/032/d1e/e97/032d1ee975514cf096d235bb76d4df46.png"/>
-    </p>
+	![Screenshot 1](https://habrastorage.org/files/b65/380/1ee/b653801eeb39447084cf21a6ec3e11e0.png)
+
+	![Screenshot 2](https://habrastorage.org/files/032/d1e/e97/032d1ee975514cf096d235bb76d4df46.png)
 
 3) Add new library module - it will contain your widget.
-    <p align="center">
-        <img src="https://habrastorage.org/files/788/d2f/99e/788d2f99edff4698b7065acd9bb81965.png"/>
-    </p>
+	![Screenshot 3](https://habrastorage.org/files/788/d2f/99e/788d2f99edff4698b7065acd9bb81965.png)
     
 4) Add gradle dependency to your library module
-    ```groovy
-    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.0'
-    ```
+
+	`compile 'com.github.appintheair:aita-android-widget-sdk:0.9.0'`
+    
     and add your library module as a dependency for the template project app module.
     
 5) Extend `WidgetView` class and implement all necessary methods
-    ```java
+	```java
     public class MyAwesomeWidget extends WidgetView {
           @Override
           protected void setUpWidget() {
@@ -65,7 +58,7 @@ Android library for working with App in the Air widget API.
     ```
     
 6) Fake flight, airport and airline data for your needs
-    ```java
+	```java
     final WidgetFlight flight = new WidgetFlight(
                 3973.3806f, // distance
                 "Scheduled", // status
@@ -85,18 +78,20 @@ Android library for working with App in the Air widget API.
                 airline // airline
     );
     ```
-    See full version [here](https://github.com/appintheair/aita-android-widget-sdk/sample/app/src/main/java/com/aita/aitawidgetsample/MainActivity.java)
+    See full version [here](https://github.com/appintheair/aita-android-widget-sdk/blob/master/sample/app/src/main/java/com/aita/aitawidgetsample/MainActivity.java)
 
 7) Create your awesome widget and test it with the template project. 
 
 ## See also
-[Sample app](https://github.com/appintheair/aita-android-widget-sdk/sample/) with weather widget.
-<p align="center">
-        <img src="https://habrastorage.org/files/879/4d3/2ee/8794d32ee4154b6c8e34788f6d4d2a36.png"/>
-    </p>
+[Sample app](https://github.com/appintheair/aita-android-widget-sdk/tree/master/sample) with weather widget.
+	![Screenshot 4](https://habrastorage.org/files/879/4d3/2ee/8794d32ee4154b6c8e34788f6d4d2a36.png)
 
 ## Distribution
-1) Find `.aar` file in `<your-library-module-name>/build/outputs/aar/<your-library-module-name>-release.aar` folder.
+1) Find `.aar` file in 
+
+`<your-library-module-name>/build/outputs/aar/<your-library-module-name>-release.aar` 
+
+folder.
 
 2) Write us on [opensource@appintheair.mobi](mailto:opensource@appintheair.mobi). Attach full description of your widget, screenshots and `.aar` file.
 
