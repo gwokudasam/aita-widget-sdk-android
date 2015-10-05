@@ -52,7 +52,7 @@ public class MyAwesomeWidget extends WidgetView {
 	protected String getWidgetSubtitleText() {
 		return "Widget subtitile";
 	}
-	
+	// Icon size for xxxhdpi - 160px
 	@Override
 	protected int getWidgetIconId() {
 		return R.drawable.widget_icon;
