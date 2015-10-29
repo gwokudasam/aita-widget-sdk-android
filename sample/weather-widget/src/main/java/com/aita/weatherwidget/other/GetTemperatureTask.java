@@ -2,6 +2,7 @@ package com.aita.weatherwidget.other;
 
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -35,10 +36,12 @@ public class GetTemperatureTask extends AsyncTask<LatLng, Void, List<Integer>> {
                         .url("http://api.openweathermap.org/data/2.5/weather?" +
                                 "units=Metric" +
                                 "&lat=" + latLng.lat +
-                                "&lon=" + latLng.lon)
+                                "&lon=" + latLng.lon +
+                                "&APPID=ce124895da91ab40c27011636b8997d0")
                         .build();
 
                 final Response response = mClient.newCall(request).execute();
+                Log.d("TAG", response.toString());
                 final JSONObject jsonObject = new JSONObject(response.body().string());
                 temps.add((int) Math.round(jsonObject
                         .getJSONObject("main")

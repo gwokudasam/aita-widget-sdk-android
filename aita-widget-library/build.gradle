@@ -21,15 +21,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.android.support:cardview-v7:22.0.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'
     compile 'de.hdodenhof:circleimageview:1.3.0'
 }
 
 publish {
     groupId = 'com.github.appintheair'
     artifactId = 'aita-android-widget-sdk'
-    publishVersion = '0.9.0'
+    publishVersion = '0.9.1'
     desc = 'Android library for working with App in the Air widget API.'
     licences = ['MIT']
     website = 'https://github.com/appintheair/aita-android-widget-sdk'
