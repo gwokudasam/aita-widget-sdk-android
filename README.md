@@ -100,6 +100,7 @@ See full version with airport and airline objects [here](https://github.com/appi
 * Don't use fragments in your widget.
 * Widget icon has 40x40 dp. size. It must be round and flat.
 * We use ProGuard to obfuscate code, so, please, provide proguard rules for your widget.
+* And don't forget to give us a list of your gradle dependencies :)
 
 ## See also
 [Sample app](https://github.com/appintheair/aita-android-widget-sdk/tree/master/sample) with weather widget.
