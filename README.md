@@ -22,7 +22,7 @@ git clone https://github.com/appintheair/aita-android-widget-sdk.git
 4) To include our SDK in your projects add gradle dependency to your library module
 
 ```gradle
-compile 'com.github.appintheair:aita-android-widget-sdk:0.9.2'
+compile 'com.github.appintheair:aita-android-widget-sdk:0.9.3-beta-2'
 ```
 
 Don't forget to add your module as a dependency for the template project of the app module.
@@ -41,25 +41,23 @@ public class MyAwesomeWidget extends WidgetView {
 		// update
 	}
 	
-	@NonNull
 	@Override
-	protected String getWidgetTitleText() {
+	public String getWidgetTitleText() {
 		return "Widget title";
 	}
 	
-	@NonNull
 	@Override
-	protected String getWidgetSubtitleText() {
+	public String getWidgetSubtitleText() {
 		return "Widget subtitile";
 	}
-	// Icon size for xxxhdpi - 160px
+	
 	@Override
-	protected int getWidgetIconId() {
+	public int getWidgetIconId() {
 		return R.drawable.widget_icon;
 	}
 	
 	@Override
-	protected int getWidgetViewId() {
+	public int getWidgetViewId() {
 		return R.layout.view_widget;
 	}
 }
@@ -93,7 +91,7 @@ See full version with airport and airline objects [here](https://github.com/appi
 7) Create your awesome widget and test it with the template project. 
 
 ## Widget lifecycle
-![Lifecycle image](https://habrastorage.org/files/9b0/037/566/9b0037566396408796788e8b914a2e49.png)
+![Lifecycle image](https://habrastorage.org/files/893/bd2/149/893bd21493ae4372bf1e06dd994ad6f3.png)
 
 ## Notes
 * Don't forget to implement each of three default constructors.
@@ -115,7 +113,7 @@ See full version with airport and airline objects [here](https://github.com/appi
 
 folder.
 
-2) Write us on [opensource@appintheair.mobi](mailto:opensource@appintheair.mobi). Attach full description of your widget, screenshots and `.aar` file.
+2) Write us on [opensource@appintheair.mobi](mailto:opensource@appintheair.mobi). Attach full description of your widget, list of Gradle dependencies, ProGuard rules, screenshots and `.aar` file.
 
 3) Feel free to contact us and ask any questions.
 
