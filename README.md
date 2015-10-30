@@ -97,12 +97,13 @@ See full version with airport and airline objects [here](https://github.com/appi
 
 ## Notes
 * Don't forget to implement each of three default constructors.
+* Don't use fragments in your widget.
 * Widget icon has 40x40 dp. size. It must be round and flat.
 * We use ProGuard to obfuscate code, so, please, provide proguard rules for your widget.
 
 ## See also
 [Sample app](https://github.com/appintheair/aita-android-widget-sdk/tree/master/sample) with weather widget.
-![Screenshot 4](https://habrastorage.org/files/879/4d3/2ee/8794d32ee4154b6c8e34788f6d4d2a36.png)
+![Screenshot 4](https://habrastorage.org/files/555/1fd/e95/5551fde9577c4812a74c3f5fc93fa2bf.png)
 
 ## Distribution
 1) Find `.aar` file in 
