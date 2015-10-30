@@ -2,17 +2,15 @@ package com.aita.weatherwidget.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.aita.aitawidgetlibrary.model.WidgetAirport;
 import com.aita.aitawidgetlibrary.view.WidgetView;
 import com.aita.weatherwidget.R;
-import com.aita.weatherwidget.adapters.ErrorAdapter;
-import com.aita.weatherwidget.adapters.WeatherAdapter;
 import com.aita.weatherwidget.other.AirportWeather;
 import com.aita.weatherwidget.other.GetTemperatureTask;
 import com.aita.weatherwidget.other.LatLng;
@@ -22,7 +20,8 @@ import java.util.List;
 
 public class WeatherWidget extends WidgetView implements GetTemperatureTask.TemperatureListener {
 
-    private ViewPager mViewPager;
+    private View mErrorBlock;
+    private View mWeatherBlock;
     private ProgressBar mProgressBar;
 
     private WidgetAirport mDepartureAirport;
@@ -42,13 +41,15 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
 
     @Override
     protected void setUpWidget() {
-        mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mErrorBlock = findViewById(R.id.error_block);
+        mWeatherBlock = findViewById(R.id.weather_block);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         mDepartureAirport = mFlight.getDepartureAirport();
         mArrivalAirport = mFlight.getArrivalAirport();
 
         if (mDepartureAirport != null && mArrivalAirport != null) {
+            mProgressBar.setVisibility(VISIBLE);
             final LatLng departureAirportLatLng = new LatLng(
                     mDepartureAirport.getLatitude(),
                     mDepartureAirport.getLongitude());
@@ -63,7 +64,7 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
                     arrivalAirportLatLng);
         } else {
             mProgressBar.setVisibility(GONE);
-            showErrorFragment();
+            mErrorBlock.setVisibility(VISIBLE);
         }
     }
 
@@ -71,7 +72,7 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     public void onTemperatureLoaded(@NonNull List<Integer> result) {
         mProgressBar.setVisibility(GONE);
         if (result.isEmpty() || result.size() < 2) {
-            showErrorFragment();
+            mErrorBlock.setVisibility(VISIBLE);
         } else {
             final ArrayList<AirportWeather> airports = new ArrayList<>();
 
@@ -93,22 +94,27 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
                 airports.add(new AirportWeather(imageId, tempStr, place));
             }
 
-            mViewPager.setAdapter(new WeatherAdapter(getFragmentManager(), airports));
+            setUpWeatherBlock(airports);
+
+            mWeatherBlock.setVisibility(VISIBLE);
         }
     }
 
-    private void showErrorFragment() {
-        mViewPager.setAdapter(new ErrorAdapter(getFragmentManager()));
-    }
+    private void setUpWeatherBlock(ArrayList<AirportWeather> airports) {
+        AirportWeather departureWeather = airports.get(0);
+        AirportWeather arrivalWeather = airports.get(1);
 
-    private FragmentManager getFragmentManager() {
-        try {
-            final FragmentActivity activity = (FragmentActivity) mContext;
-            return activity.getSupportFragmentManager();
-        } catch (ClassCastException e) {
-            e.printStackTrace();
-        }
-        return null;
+        ((ImageView) findViewById(R.id.departure_weather_icon))
+                .setImageResource(departureWeather.imageId);
+        ((TextView) findViewById(R.id.departure_temperature_text))
+                .setText(departureWeather.temperature);
+        ((TextView) findViewById(R.id.departure_place_text)).setText(departureWeather.place);
+
+        ((ImageView) findViewById(R.id.arrival_weather_icon))
+                .setImageResource(arrivalWeather.imageId);
+        ((TextView) findViewById(R.id.arrival_temperature_text))
+                .setText(arrivalWeather.temperature);
+        ((TextView) findViewById(R.id.arrival_place_text)).setText(arrivalWeather.place);
     }
 
     @Override
@@ -134,6 +140,6 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
 
     @Override
     protected int getWidgetViewId() {
-        return R.layout.view_widget;
+        return R.layout.view_sample_widget;
     }
 }

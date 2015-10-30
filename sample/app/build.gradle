@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 android {
     compileSdkVersion 22
     buildToolsVersion "23.0.1"
@@ -23,5 +29,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.github.appintheair:aita-android-widget-sdk:0.9.1'
-    compile project(':weather-widget')
+
+//    compile project(':weather-widget')
+
+    compile(name:'weather-widget', ext:'aar')
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
 }
