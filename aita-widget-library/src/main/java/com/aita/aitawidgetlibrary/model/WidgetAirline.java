@@ -2,7 +2,6 @@ package com.aita.aitawidgetlibrary.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
 
 /**
  * The {@code WidgetAirline} is a representation of an airline.
@@ -101,7 +100,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The IATA airline code (e.g. "VX"). <u>May be null<u/>.
      */
-    @Nullable
     public String getIata() {
         return iata;
     }
@@ -116,7 +114,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The ICAO airline code (e.g. "AAL"). <u>May be null<u/>.
      */
-    @Nullable
     public String getIcao() {
         return icao;
     }
@@ -131,7 +128,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline name (e.g. "Virgin America"). <u>May be null<u/>.
      */
-    @Nullable
     public String getName() {
         return name;
     }
@@ -146,7 +142,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The translated airline name (e.g. "Трансаеро"). <u>May be null<u/>.
      */
-    @Nullable
     public String getNameTranslated() {
         return nameTranslated;
     }
@@ -161,7 +156,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline twitter login (e.g. "klm"). <u>May be null<u/>.
      */
-    @Nullable
     public String getTwitter() {
         return twitter;
     }
@@ -176,7 +170,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline email. <u>May be null<u/>.
      */
-    @Nullable
     public String getEmail() {
         return email;
     }
@@ -191,7 +184,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline phone number. <u>May be null<u/>.
      */
-    @Nullable
     public String getPhone() {
         return phone;
     }
@@ -206,7 +198,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline website. <u>May be null<u/>.
      */
-    @Nullable
     public String getWebsite() {
         return website;
     }
@@ -221,7 +212,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline IATA code (e.g. "VX"). <u>May be null<u/>.
      */
-    @Nullable
     public String getCode() {
         return code;
     }
@@ -236,7 +226,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline desktop checkin url. <u>May be null<u/>.
      */
-    @Nullable
     public String getWebCheckin() {
         return webCheckin;
     }
@@ -251,7 +240,6 @@ public class WidgetAirline implements Parcelable {
     /**
      * @return The airline mobile checkin url. <u>May be null<u/>.
      */
-    @Nullable
     public String getMobileCheckin() {
         return mobileCheckin;
     }

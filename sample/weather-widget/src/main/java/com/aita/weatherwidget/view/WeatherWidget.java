@@ -1,7 +1,6 @@
 package com.aita.weatherwidget.view;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -69,7 +68,7 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     }
 
     @Override
-    public void onTemperatureLoaded(@NonNull List<Integer> result) {
+    public void onTemperatureLoaded(List<Integer> result) {
         mProgressBar.setVisibility(GONE);
         if (result.isEmpty() || result.size() < 2) {
             mErrorBlock.setVisibility(VISIBLE);
@@ -121,25 +120,23 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     public void update() {
     }
 
-    @NonNull
     @Override
-    protected String getWidgetTitleText() {
+    public String getWidgetTitleText() {
         return mContext.getString(R.string.widget_title);
     }
 
-    @NonNull
     @Override
-    protected String getWidgetSubtitleText() {
+    public String getWidgetSubtitleText() {
         return mContext.getString(R.string.widget_subtitle);
     }
 
     @Override
-    protected int getWidgetIconId() {
+    public int getWidgetIconId() {
         return R.drawable.ic_widget_icon;
     }
 
     @Override
-    protected int getWidgetViewId() {
+    public int getWidgetViewId() {
         return R.layout.view_sample_widget;
     }
 }

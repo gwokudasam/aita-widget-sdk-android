@@ -2,6 +2,8 @@ package com.aita.aitawidgetsample;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.aita.aitawidgetlibrary.analytics.WidgetTracker;
 import com.aita.aitawidgetlibrary.model.WidgetAirline;
@@ -16,6 +18,11 @@ public class MainActivity extends BaseActivity implements WidgetTracker {
         super.onCreate(savedInstanceState);
 
         final WidgetView weatherWidget = (WidgetView) findViewById(R.id.weather_widget);
+
+        ((TextView) findViewById(R.id.widget_title)).setText(weatherWidget.getWidgetTitleText());
+        ((TextView) findViewById(R.id.widget_subtitle)).setText(weatherWidget.getWidgetSubtitleText());
+        ((ImageView) findViewById(R.id.widget_icon)).setImageResource(weatherWidget.getWidgetIconId());
+
         weatherWidget.setFlight(getFakeFlight());
         weatherWidget.setTracker(this);
     }

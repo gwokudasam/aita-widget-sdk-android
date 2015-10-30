@@ -1,7 +1,6 @@
 package com.aita.weatherwidget.other;
 
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.squareup.okhttp.OkHttpClient;
@@ -25,7 +24,6 @@ public class GetTemperatureTask extends AsyncTask<LatLng, Void, List<Integer>> {
         mListener = listener;
     }
 
-    @NonNull
     @Override
     protected List<Integer> doInBackground(LatLng... latLngs) {
         final ArrayList<Integer> temps = new ArrayList<>();
@@ -55,13 +53,13 @@ public class GetTemperatureTask extends AsyncTask<LatLng, Void, List<Integer>> {
     }
 
     @Override
-    protected void onPostExecute(@NonNull List<Integer> result) {
+    protected void onPostExecute(List<Integer> result) {
         super.onPostExecute(result);
         if (mListener != null)
             mListener.onTemperatureLoaded(result);
     }
 
     public interface TemperatureListener {
-        void onTemperatureLoaded(@NonNull List<Integer> result);
+        void onTemperatureLoaded(List<Integer> result);
     }
 }

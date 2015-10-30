@@ -16,6 +16,14 @@ public class MainActivity extends BaseActivity implements WidgetTracker {
 
 //        TODO: set your widget up
 //        final WidgetView myAwesomeWidget = (WidgetView) findViewById(R.id.my_awesome_widget);
+
+//        ((TextView) findViewById(R.id.widget_title))
+//                .setText(myAwesomeWidget.getWidgetTitleText());
+//        ((TextView) findViewById(R.id.widget_subtitle))
+//                .setText(myAwesomeWidget.getWidgetSubtitleText());
+//        ((ImageView) findViewById(R.id.widget_icon))
+//                .setImageResource(myAwesomeWidget.getWidgetIconId());
+
 //        myAwesomeWidget.setFlight(getFakeFlight());
 //        myAwesomeWidget.setTracker(this);
     }

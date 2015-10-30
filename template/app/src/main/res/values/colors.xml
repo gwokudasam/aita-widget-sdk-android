@@ -10,4 +10,7 @@
     <color name="template_divider">#B6B6B6</color>
     <color name="template_white">#ffffff</color>
     <color name="template_black">#000000</color>
+
+    <color name="widget_title_text_color">#525252</color>
+    <color name="widget_subtitle_text_color">#525252</color>
 </resources>

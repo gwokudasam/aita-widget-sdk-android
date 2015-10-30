@@ -2,7 +2,6 @@ package com.aita.aitawidgetlibrary.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
 
 /**
  * The {@code WidgetAirport} is a representation of an airport.
@@ -150,7 +149,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The airport name (e.g. "Los Angeles International Airport"). <u>May be null<u/>.
      */
-    @Nullable
     public String getAirportName() {
         return airportName;
     }
@@ -166,7 +164,6 @@ public class WidgetAirport implements Parcelable {
      * @return The airport name (e.g. "Международный аэропорт Лос-Анджелеса")
      * translated to current locale. <u>May be null<u/>.
      */
-    @Nullable
     public String getAirportNameTranslated() {
         return airportNameTranslated;
     }
@@ -181,7 +178,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The airport city (e.g. "Los Angeles"). <u>May be null<u/>.
      */
-    @Nullable
     public String getCity() {
         return city;
     }
@@ -197,7 +193,6 @@ public class WidgetAirport implements Parcelable {
      * @return The airport city (e.g. "Лос-Анджелес") translated to current locale.
      * <u>May be null<u/>.
      */
-    @Nullable
     public String getCityTranslated() {
         return cityTranslated;
     }
@@ -212,7 +207,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The airport country (e.g. "United States"). <u>May be null<u/>.
      */
-    @Nullable
     public String getCountryFull() {
         return countryFull;
     }
@@ -227,7 +221,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The IATA airport code (e.g. "LAX"). <u>May be null<u/>.
      */
-    @Nullable
     public String getCode() {
         return code;
     }
@@ -242,7 +235,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The airport website url. <u>May be null<u/>.
      */
-    @Nullable
     public String getUrl() {
         return url;
     }
@@ -257,7 +249,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The airport country code (e.g. "US"). <u>May be null<u/>.
      */
-    @Nullable
     public String getCountryCode() {
         return countryCode;
     }
@@ -272,7 +263,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The airport phone number. <u>May be null<u/>.
      */
-    @Nullable
     public String getPhone() {
         return phone;
     }
@@ -287,7 +277,6 @@ public class WidgetAirport implements Parcelable {
     /**
      * @return The time delay for the airport. <u>May be null<u/>.
      */
-    @Nullable
     public String getDelay() {
         return delay;
     }

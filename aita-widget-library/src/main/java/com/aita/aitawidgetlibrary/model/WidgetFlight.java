@@ -2,7 +2,6 @@ package com.aita.aitawidgetlibrary.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
 
 /**
  * The {@code WidgetFlight} is a representation of a flight.
@@ -140,7 +139,6 @@ public class WidgetFlight implements Parcelable {
      * @return The status of the flight, e.g. "Active", "Scheduled",
      * "Cancelled", etc. <u>May be null<u/>.
      */
-    @Nullable
     public String getStatus() {
         return status;
     }
@@ -155,7 +153,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The seat number if present (e.g. "31B"). <u>May be null<u/>.
      */
-    @Nullable
     public String getSeat() {
         return seat;
     }
@@ -170,7 +167,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The class (seat zone) if present (e.g. "Economy"). <u>May be null<u/>.
      */
-    @Nullable
     public String getSeatZone() {
         return seatZone;
     }
@@ -185,7 +181,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The booking reference if present (e.g. "MKF6HE"). <u>May be null<u/>.
      */
-    @Nullable
     public String getBookingReference() {
         return bookingReference;
     }
@@ -200,7 +195,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The aircraft type if present (e.g. "737"). <u>May be null<u/>.
      */
-    @Nullable
     public String getEquipment() {
         return equipment;
     }
@@ -215,7 +209,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The flight number if present (e.g. "179"). <u>May be null<u/>.
      */
-    @Nullable
     public String getNumber() {
         return number;
     }
@@ -230,7 +223,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The IATA airline code if present (e.g. "VX"). <u>May be null<u/>.
      */
-    @Nullable
     public String getAirlineCode() {
         return airlineCode;
     }
@@ -323,7 +315,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The arrival {@link WidgetAirport} object of the flight. <u>May be null</u>.
      */
-    @Nullable
     public WidgetAirport getArrivalAirport() {
         return arrivalAirport;
     }
@@ -338,7 +329,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The departure {@link WidgetAirport} object of the flight. <u>May be null</u>.
      */
-    @Nullable
     public WidgetAirport getDepartureAirport() {
         return departureAirport;
     }
@@ -353,7 +343,6 @@ public class WidgetFlight implements Parcelable {
     /**
      * @return The {@link WidgetAirline} object of the flight. <u>May be null</u>.
      */
-    @Nullable
     public WidgetAirline getAirline() {
         return airline;
     }
