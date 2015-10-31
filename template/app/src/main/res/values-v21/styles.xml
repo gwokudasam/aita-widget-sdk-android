@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Template" parent="Theme.Template.Base">
+        <item name="android:colorPrimary">@color/template_primary</item>
+        <item name="android:colorPrimaryDark">@color/template_primary_dark</item>
+        <item name="android:colorAccent">@color/template_accent</item>
+        <item name="android:statusBarColor">@color/template_primary_dark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+    </style>
+
+</resources>

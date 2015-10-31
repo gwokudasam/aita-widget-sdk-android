@@ -1,0 +1,4 @@
+<resources>
+    <string name="template_app_name">Sandbox</string>
+    <string name="template_widget_sandbox">Widget sandbox</string>
+</resources>

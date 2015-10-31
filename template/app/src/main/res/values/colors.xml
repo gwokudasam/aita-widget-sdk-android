@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="template_primary">#3295ba</color>
+    <color name="template_primary_dark">#1785AA</color>
+    <color name="template_primary_light">#C5CAE9</color>
+    <color name="template_accent">#1eaaf1</color>
+    <color name="template_primary_text">#212121</color>
+    <color name="template_secondary_text">#727272</color>
+    <color name="template_icons">#FFFFFF</color>
+    <color name="template_divider">#B6B6B6</color>
+    <color name="template_white">#ffffff</color>
+    <color name="template_black">#000000</color>
+
+    <color name="widget_title_text_color">#525252</color>
+    <color name="widget_subtitle_text_color">#525252</color>
+</resources>

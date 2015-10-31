@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+publish {
+    groupId = 'com.github.appintheair'
+    artifactId = 'aita-android-widget-sdk'
+    publishVersion = '0.9.3-beta-2'
+    desc = 'Android library for working with App in the Air widget API.'
+    licences = ['MIT']
+    website = 'https://github.com/appintheair/aita-android-widget-sdk'
+}

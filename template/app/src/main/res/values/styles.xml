@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Template" parent="Theme.Template.Base"/>
+
+    <style name="Theme.Template.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/template_primary</item>
+        <item name="colorPrimaryDark">@color/template_primary_dark</item>
+        <item name="colorAccent">@color/template_accent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/template_white</item>
+    </style>
+
+</resources>
