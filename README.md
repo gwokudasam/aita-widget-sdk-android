@@ -7,7 +7,7 @@ Learn more about  [distribution](#distribution).
 1) Clone this repository
 
 ```shell
-git clone https://github.com/appintheair/aita-android-widget-sdk.git
+git clone https://github.com/appintheair/aita-widget-sdk-android.git
 ```
 
 2) Open project from the template folder
