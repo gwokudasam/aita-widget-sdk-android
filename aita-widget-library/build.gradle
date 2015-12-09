@@ -22,7 +22,7 @@ android {
 publish {
     groupId = 'com.github.appintheair'
     artifactId = 'aita-android-widget-sdk'
-    publishVersion = '0.9.3-beta-2'
+    publishVersion = '0.9.4-beta'
     desc = 'Android library for working with App in the Air widget API.'
     licences = ['MIT']
     website = 'https://github.com/appintheair/aita-android-widget-sdk'
