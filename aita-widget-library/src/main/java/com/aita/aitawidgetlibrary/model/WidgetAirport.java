@@ -455,7 +455,6 @@ public class WidgetAirport implements Parcelable {
         if (countryCode != null ? !countryCode.equals(that.countryCode) : that.countryCode != null)
             return false;
         return !(phone != null ? !phone.equals(that.phone) : that.phone != null);
-
     }
 
     @Override

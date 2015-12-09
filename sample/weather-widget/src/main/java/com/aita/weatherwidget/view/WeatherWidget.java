@@ -157,4 +157,5 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     public boolean isCardClickable() {
         return true;
     }
+
 }
