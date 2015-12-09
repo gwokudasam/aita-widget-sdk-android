@@ -51,7 +51,7 @@ public class WidgetAirline implements Parcelable {
         this.isNameTranslated = isNameTranslated;
     }
 
-    public WidgetAirline(Parcel parcel) {
+    protected WidgetAirline(Parcel parcel) {
         iata = parcel.readString();
         icao = parcel.readString();
         name = parcel.readString();

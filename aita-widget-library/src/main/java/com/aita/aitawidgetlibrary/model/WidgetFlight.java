@@ -80,7 +80,7 @@ public class WidgetFlight implements Parcelable {
         this.airline = airline;
     }
 
-    public WidgetFlight(Parcel parcel) {
+    protected WidgetFlight(Parcel parcel) {
         distance = parcel.readFloat();
 
         status = parcel.readString();

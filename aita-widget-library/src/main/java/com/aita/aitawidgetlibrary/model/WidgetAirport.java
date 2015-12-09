@@ -75,7 +75,7 @@ public class WidgetAirport implements Parcelable {
         this.isCityTranslated = isCityTranslated;
     }
 
-    public WidgetAirport(Parcel parcel) {
+    protected WidgetAirport(Parcel parcel) {
         airportName = parcel.readString();
         airportNameTranslated = parcel.readString();
         city = parcel.readString();
