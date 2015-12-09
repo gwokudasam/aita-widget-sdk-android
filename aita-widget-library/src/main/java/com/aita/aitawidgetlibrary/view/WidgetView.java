@@ -13,6 +13,8 @@ import com.aita.aitawidgetlibrary.other.WidgetViewManager;
  */
 public abstract class WidgetView extends RelativeLayout {
 
+    // TODO: Make WidgetView trip-based
+
     private WidgetTracker mTracker;
     private WidgetViewManager mViewManager;
 

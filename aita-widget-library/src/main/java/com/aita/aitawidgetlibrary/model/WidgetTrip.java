@@ -43,42 +43,72 @@ public class WidgetTrip implements Parcelable {
         parcel.writeTypedList(flights);
     }
 
+    /**
+     * @return The departure time in seconds in the departure airport timezone.
+     */
     public long getDepartureDate() {
         return departureDate;
     }
 
+    /**
+     * @param departureDate the departure time in seconds in the departure airport timezone to set.
+     */
     public void setDepartureDate(long departureDate) {
         this.departureDate = departureDate;
     }
 
+    /**
+     * @return The departure airport code. <u>May be null<u/>.
+     */
     public String getDepartureAirportCode() {
         return departureAirportCode;
     }
 
+    /**
+     * @param departureAirportCode the departure airport code to set.
+     */
     public void setDepartureAirportCode(String departureAirportCode) {
         this.departureAirportCode = departureAirportCode;
     }
 
+    /**
+     * @return The arrival time in seconds in the arrival airport timezone.
+     */
     public long getArrivalDate() {
         return arrivalDate;
     }
 
+    /**
+     * @param arrivalDate the arrival time in seconds in the arrival airport timezone to set.
+     */
     public void setArrivalDate(long arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
 
+    /**
+     * @return The arrival airport code. <u>May be null<u/>.
+     */
     public String getArrivalAirportCode() {
         return arrivalAirportCode;
     }
 
+    /**
+     * @param arrivalAirportCode the arrival airport code to set.
+     */
     public void setArrivalAirportCode(String arrivalAirportCode) {
         this.arrivalAirportCode = arrivalAirportCode;
     }
 
+    /**
+     * @return The list of flights of the trip. <u>May be null<u/>.
+     */
     public ArrayList<WidgetFlight> getFlights() {
         return flights;
     }
 
+    /**
+     * @param flights the list of flights for the trip.
+     */
     public void setFlights(ArrayList<WidgetFlight> flights) {
         this.flights = flights;
     }
