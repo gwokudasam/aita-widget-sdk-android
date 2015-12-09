@@ -8,6 +8,23 @@ import android.os.Parcelable;
  */
 public class WidgetFlight implements Parcelable {
 
+    /**
+     * The {@code WidgetFlightStatus} is a convenient representation of flight status field.
+     */
+    public enum WidgetFlightStatus {
+        EN_ROUTE,
+        CANCELED,
+        DIVERTED,
+        DATA_SOURCE_NEEDED,
+        LANDED,
+        NOT_OPERATIONAL,
+        REDIRECTED,
+        SCHEDULED,
+        UNKNOWN;
+    }
+
+    private WidgetFlightStatus statusEnum;
+
     private float distance;
 
     private String status;
@@ -148,6 +165,80 @@ public class WidgetFlight implements Parcelable {
      */
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * @return flight status in convenient enum format.
+     */
+    public WidgetFlightStatus getStatusEnum() {
+        if (status == null) {
+            return WidgetFlightStatus.UNKNOWN;
+        } else {
+            switch (status.toLowerCase()) {
+                case "a":
+                case "en route":
+                    return WidgetFlightStatus.EN_ROUTE;
+                case "c":
+                case "canceled":
+                case "cancelled":
+                    return WidgetFlightStatus.CANCELED;
+                case "d":
+                case "diverted":
+                    return WidgetFlightStatus.DIVERTED;
+                case "dn":
+                case "data source needed":
+                    return WidgetFlightStatus.DATA_SOURCE_NEEDED;
+                case "l":
+                case "landed":
+                    return WidgetFlightStatus.LANDED;
+                case "no":
+                case "not operational":
+                    return WidgetFlightStatus.NOT_OPERATIONAL;
+                case "r":
+                case "redirected":
+                    return WidgetFlightStatus.REDIRECTED;
+                case "s":
+                case "scheduled":
+                    return WidgetFlightStatus.SCHEDULED;
+                default:
+                    return WidgetFlightStatus.UNKNOWN;
+            }
+        }
+    }
+
+    /**
+     * @param statusEnum flight status in convenient enum format.
+     */
+    public void setStatusEnum(WidgetFlightStatus statusEnum) {
+        switch (statusEnum) {
+            case EN_ROUTE:
+                status = "En route";
+                break;
+            case CANCELED:
+                status = "Canceled";
+                break;
+            case DIVERTED:
+                status = "Diverted";
+                break;
+            case DATA_SOURCE_NEEDED:
+                status = "Data source needed";
+                break;
+            case LANDED:
+                status = "Landed";
+                break;
+            case NOT_OPERATIONAL:
+                status = "Not operational";
+                break;
+            case REDIRECTED:
+                status = "Redirected";
+                break;
+            case SCHEDULED:
+                status = "Scheduled";
+                break;
+            case UNKNOWN:
+                status = "Unknown";
+                break;
+        }
     }
 
     /**
