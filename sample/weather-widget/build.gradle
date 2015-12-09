@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.3-beta-2'
+    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.4-beta'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
 }

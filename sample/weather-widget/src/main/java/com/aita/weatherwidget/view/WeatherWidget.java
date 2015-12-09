@@ -6,8 +6,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aita.aitawidgetlibrary.model.WidgetAirport;
+import com.aita.aitawidgetlibrary.model.WidgetFlight;
 import com.aita.aitawidgetlibrary.view.WidgetView;
 import com.aita.weatherwidget.R;
 import com.aita.weatherwidget.other.AirportWeather;
@@ -39,13 +41,18 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     }
 
     @Override
-    protected void setUpWidget() {
+    public void init(WidgetFlight flight) {
         mErrorBlock = findViewById(R.id.error_block);
         mWeatherBlock = findViewById(R.id.weather_block);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
-        mDepartureAirport = mFlight.getDepartureAirport();
-        mArrivalAirport = mFlight.getArrivalAirport();
+        update(flight);
+    }
+
+    @Override
+    public void update(WidgetFlight flight) {
+        mDepartureAirport = flight.getDepartureAirport();
+        mArrivalAirport = flight.getArrivalAirport();
 
         if (mDepartureAirport != null && mArrivalAirport != null) {
             mProgressBar.setVisibility(VISIBLE);
@@ -117,17 +124,13 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     }
 
     @Override
-    public void update() {
-    }
-
-    @Override
     public String getWidgetTitleText() {
-        return mContext.getString(R.string.widget_title);
+        return getContext().getString(R.string.widget_title);
     }
 
     @Override
     public String getWidgetSubtitleText() {
-        return mContext.getString(R.string.widget_subtitle);
+        return getContext().getString(R.string.widget_subtitle);
     }
 
     @Override
@@ -138,5 +141,20 @@ public class WeatherWidget extends WidgetView implements GetTemperatureTask.Temp
     @Override
     public int getWidgetViewId() {
         return R.layout.view_sample_widget;
+    }
+
+    @Override
+    public OnClickListener getOnCardClickListener() {
+        return new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Winter is coming", Toast.LENGTH_LONG).show();
+            }
+        };
+    }
+
+    @Override
+    public boolean isCardClickable() {
+        return true;
     }
 }
