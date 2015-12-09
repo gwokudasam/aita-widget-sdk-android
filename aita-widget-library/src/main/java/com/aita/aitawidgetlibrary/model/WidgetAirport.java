@@ -17,7 +17,6 @@ public class WidgetAirport implements Parcelable {
     private String url;
     private String countryCode;
     private String phone;
-    private String delay;
 
     private int tipsCount;
     private int reportsCount;
@@ -43,7 +42,6 @@ public class WidgetAirport implements Parcelable {
                          String url,
                          String countryCode,
                          String phone,
-                         String delay,
                          int tipsCount,
                          int reportsCount,
                          double offset,
@@ -64,7 +62,6 @@ public class WidgetAirport implements Parcelable {
         this.url = url;
         this.countryCode = countryCode;
         this.phone = phone;
-        this.delay = delay;
         this.tipsCount = tipsCount;
         this.reportsCount = reportsCount;
         this.offset = offset;
@@ -88,7 +85,6 @@ public class WidgetAirport implements Parcelable {
         url = parcel.readString();
         countryCode = parcel.readString();
         phone = parcel.readString();
-        delay = parcel.readString();
 
         tipsCount = parcel.readInt();
         reportsCount = parcel.readInt();
@@ -129,7 +125,6 @@ public class WidgetAirport implements Parcelable {
         parcel.writeString(url);
         parcel.writeString(countryCode);
         parcel.writeString(phone);
-        parcel.writeString(delay);
 
         parcel.writeInt(tipsCount);
         parcel.writeInt(reportsCount);
@@ -272,20 +267,6 @@ public class WidgetAirport implements Parcelable {
      */
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    /**
-     * @return The time delay for the airport. <u>May be null<u/>.
-     */
-    public String getDelay() {
-        return delay;
-    }
-
-    /**
-     * @param delay of the airport to set.
-     */
-    public void setDelay(String delay) {
-        this.delay = delay;
     }
 
     /**
@@ -462,12 +443,10 @@ public class WidgetAirport implements Parcelable {
         if (isCityTranslated != that.isCityTranslated) return false;
         if (airportName != null ? !airportName.equals(that.airportName) : that.airportName != null)
             return false;
-        if (airportNameTranslated != null ? !airportNameTranslated.equals(
-                that.airportNameTranslated) : that.airportNameTranslated != null)
+        if (airportNameTranslated != null ? !airportNameTranslated.equals(that.airportNameTranslated) : that.airportNameTranslated != null)
             return false;
         if (city != null ? !city.equals(that.city) : that.city != null) return false;
-        if (cityTranslated != null ? !cityTranslated.equals(that.cityTranslated) :
-                that.cityTranslated != null)
+        if (cityTranslated != null ? !cityTranslated.equals(that.cityTranslated) : that.cityTranslated != null)
             return false;
         if (countryFull != null ? !countryFull.equals(that.countryFull) : that.countryFull != null)
             return false;
@@ -475,8 +454,7 @@ public class WidgetAirport implements Parcelable {
         if (url != null ? !url.equals(that.url) : that.url != null) return false;
         if (countryCode != null ? !countryCode.equals(that.countryCode) : that.countryCode != null)
             return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        return !(delay != null ? !delay.equals(that.delay) : that.delay != null);
+        return !(phone != null ? !phone.equals(that.phone) : that.phone != null);
 
     }
 
@@ -485,8 +463,7 @@ public class WidgetAirport implements Parcelable {
         int result;
         long temp;
         result = airportName != null ? airportName.hashCode() : 0;
-        result = 31 * result + (airportNameTranslated != null ?
-                airportNameTranslated.hashCode() : 0);
+        result = 31 * result + (airportNameTranslated != null ? airportNameTranslated.hashCode() : 0);
         result = 31 * result + (city != null ? city.hashCode() : 0);
         result = 31 * result + (cityTranslated != null ? cityTranslated.hashCode() : 0);
         result = 31 * result + (countryFull != null ? countryFull.hashCode() : 0);
@@ -494,7 +471,6 @@ public class WidgetAirport implements Parcelable {
         result = 31 * result + (url != null ? url.hashCode() : 0);
         result = 31 * result + (countryCode != null ? countryCode.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (delay != null ? delay.hashCode() : 0);
         result = 31 * result + tipsCount;
         result = 31 * result + reportsCount;
         temp = Double.doubleToLongBits(offset);
