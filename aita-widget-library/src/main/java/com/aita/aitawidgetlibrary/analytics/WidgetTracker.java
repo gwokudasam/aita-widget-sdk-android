@@ -9,6 +9,6 @@ public interface WidgetTracker {
      * @param action to send. It cannot be null.
      * @param label  to send. <u>May be null<u/>.
      */
-    void sendEvent(String action,String label);
+    void sendEvent(String action, String label);
 
 }

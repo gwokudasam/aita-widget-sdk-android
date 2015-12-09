@@ -6,29 +6,29 @@ import android.widget.RelativeLayout;
 
 import com.aita.aitawidgetlibrary.analytics.WidgetTracker;
 import com.aita.aitawidgetlibrary.model.WidgetFlight;
+import com.aita.aitawidgetlibrary.other.WidgetViewManager;
 
 /**
  * The {@code WidgetView} is a base view class for an App in the Air feed widget.
  */
 public abstract class WidgetView extends RelativeLayout {
 
-    protected Context mContext;
-    protected WidgetFlight mFlight;
-    protected WidgetTracker mTracker;
+    private WidgetTracker mTracker;
+    private WidgetViewManager mViewManager;
 
-    public WidgetView(final Context context) {
+    public WidgetView(Context context) {
         super(context);
-        mContext = context;
+        inflate(context, getWidgetViewId(), this);
     }
 
-    public WidgetView(final Context context, final AttributeSet attrs) {
+    public WidgetView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContext = context;
+        inflate(context, getWidgetViewId(), this);
     }
 
-    public WidgetView(final Context context, final AttributeSet attrs, int defStyleAttr) {
+    public WidgetView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mContext = context;
+        inflate(context, getWidgetViewId(), this);
     }
 
     /**
@@ -36,29 +36,32 @@ public abstract class WidgetView extends RelativeLayout {
      *
      * @param flight The flight to set. It cannot be null.
      */
-    public void setFlight(final WidgetFlight flight) {
-        mFlight = flight;
-        inflate(mContext, getWidgetViewId(), this);
-        setUpWidget();
-    }
+    public abstract void init(WidgetFlight flight);
+
+    /**
+     * Called at least once a minute or when the flight was updated.
+     * Use it to update your widget's content if needed. Don't put slow operations here.
+     *
+     * @param flight The flight to set. It cannot be null.
+     */
+    public abstract void update(WidgetFlight flight);
 
     /**
      * Sets the analytics tracker.
      *
      * @param tracker The {@link WidgetTracker} to set. It cannot be null.
      */
-    public void setTracker(final WidgetTracker tracker) {
+    public final void setTracker(WidgetTracker tracker) {
         mTracker = tracker;
     }
 
     /**
-     * Called every 1-5 minutes or when the flight updated. It calls {@link #update()} inside.
+     * Sets the view manager.
      *
-     * @param flight The flight to set. It cannot be null.
+     * @param viewManager The {@link WidgetViewManager} to set. It cannot be null.
      */
-    public void update(final WidgetFlight flight) {
-        mFlight = flight;
-        update();
+    public final void setViewManager(WidgetViewManager viewManager) {
+        mViewManager = viewManager;
     }
 
     /**
@@ -66,7 +69,7 @@ public abstract class WidgetView extends RelativeLayout {
      *
      * @param action The action title, e.g. "my_widget_button_click".
      */
-    protected void sendEvent(String action) {
+    protected final void sendEvent(String action) {
         sendEvent(action, null);
     }
 
@@ -76,51 +79,55 @@ public abstract class WidgetView extends RelativeLayout {
      * @param action The action title, e.g. "my_widget_button_click".
      * @param label  The label for the action, e.g. "done_button".
      */
-    protected void sendEvent(String action, String label) {
-        if (mTracker != null)
+    protected final void sendEvent(String action, String label) {
+        if (mTracker != null) {
             mTracker.sendEvent(action, label);
+        }
     }
 
     /**
-     * Called at least once a minute. Use it to update your widget's content if needed. Don't
-     * put hard or slow operations here.
+     * Makes your widget invisible. Call it when you have nothing to show for the flight.
      */
-    public abstract void update();
+    protected final void hideWidget() {
+        mViewManager.setWidgetViewVisible(false);
+    }
 
     /**
-     * Called once after the {@link #setFlight(WidgetFlight)} method. Use it to initialize and
-     * set up your widget. For updating your widget use the {@link #update()} method.
+     * Makes your widget visible. Call it when the widget is invisible.
      */
-    protected abstract void setUpWidget();
+    protected final void showWidget() {
+        mViewManager.setWidgetViewVisible(true);
+    }
 
     /**
-     * This method is called in {@link #setUpWidget()} to set up your widget's title.
-     *
-     * @return The title for your widget. It cannot be null.
+     * @return The title for your widget. Return null or "" if you want to make title gone.
      */
-
     public abstract String getWidgetTitleText();
 
     /**
-     * This method is called in {@link #setUpWidget()} to set up your widget's subtitle.
-     *
-     * @return The subtitle for your widget. It cannot be null.
+     * @return The subtitle for your widget. Return null or "" if you want to make subtitle gone.
      */
-
     public abstract String getWidgetSubtitleText();
 
     /**
-     * This method is called in {@link #setUpWidget()} to set up your widget's circle icon.
-     *
      * @return The image resource id for your widget's circle icon.
      */
     public abstract int getWidgetIconId();
 
     /**
-     * This method is called in {@link #setUpWidget()} to set up your widget's layout.
-     *
      * @return The layout resource id for your widget's content.
      */
     public abstract int getWidgetViewId();
+
+    /**
+     * @return The OnClickListener for the whole widget card.
+     * Return null if your widget card is not clickable.
+     */
+    public abstract OnClickListener getOnCardClickListener();
+
+    /**
+     * @return true if your widget card is clickable, false - otherwise.
+     */
+    public abstract boolean isCardClickable();
 
 }
