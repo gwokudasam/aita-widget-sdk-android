@@ -61,16 +61,16 @@ public class ContentFragment extends Fragment implements WidgetTracker {
     private void setUpContainer(View rootView, WidgetView weatherWidget) {
         TextView widgetTitle = (TextView) rootView.findViewById(R.id.widget_title);
         String widgetTitleText = weatherWidget.getWidgetTitleText();
-        configureTitle(rootView, widgetTitle, widgetTitleText);
+        configureTitle(widgetTitle, widgetTitleText);
 
         TextView widgetSubtitle = (TextView) rootView.findViewById(R.id.widget_subtitle);
         String widgetSubtitleText = weatherWidget.getWidgetSubtitleText();
-        configureTitle(rootView, widgetSubtitle, widgetSubtitleText);
+        configureTitle(widgetSubtitle, widgetSubtitleText);
 
         ((ImageView) rootView.findViewById(R.id.widget_icon)).setImageResource(weatherWidget.getWidgetIconId());
     }
 
-    private void configureTitle(View rootView, TextView widgetTitle, String widgetTitleText) {
+    private void configureTitle(TextView widgetTitle, String widgetTitleText) {
         if (widgetTitleText != null && !widgetTitleText.isEmpty()) {
             widgetTitle.setVisibility(View.VISIBLE);
             widgetTitle.setText(widgetTitleText);
