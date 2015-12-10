@@ -27,7 +27,7 @@ git clone https://github.com/appintheair/aita-widget-sdk-android.git
 4) To include our SDK in your projects add gradle dependency to your library module
 
 ```gradle
-compile 'com.github.appintheair:aita-android-widget-sdk:0.9.4-beta'
+compile 'com.github.appintheair:aita-android-widget-sdk:1.0.0'
 ```
 
 Don't forget to add your module as a dependency for the template project of the app module.
