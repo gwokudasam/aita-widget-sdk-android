@@ -25,5 +25,5 @@ dependencies {
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'de.hdodenhof:circleimageview:1.3.0'
 
-    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.4-beta'
+    compile 'com.github.appintheair:aita-android-widget-sdk:1.0.0'
 }

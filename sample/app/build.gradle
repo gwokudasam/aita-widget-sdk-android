@@ -34,6 +34,6 @@ dependencies {
     compile project(':weather-widget')
 //    compile(name: 'weather-widget', ext: 'aar')
 
-    compile 'com.github.appintheair:aita-android-widget-sdk:0.9.4-beta'
+    compile 'com.github.appintheair:aita-android-widget-sdk:1.0.0'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
 }
