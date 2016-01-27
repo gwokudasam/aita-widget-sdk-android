@@ -124,7 +124,7 @@ See full version with airport and airline objects [here](https://github.com/appi
 7) Create your awesome widget and test it with the template project. 
 
 ## Widget lifecycle
-![Lifecycle image](https://habrastorage.org/files/742/b09/29b/742b0929b41f40bab8a7faecea58cc2f.png)
+![Lifecycle image](https://habrastorage.org/files/b9a/850/694/b9a8506942fb4e098e3514a9f764cd0d.png)
 
 ## Notes
 * Don't forget to implement each of three default constructors.
